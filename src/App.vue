@@ -18,6 +18,15 @@
         {{ index }} -{{ item.name }} - {{ item.price }}
       </li>
     </ul>
+    <componentA :dataA="dataa"></componentA>
+    <a :href="link" :title="msg">baidu</a>
+    <a :class="red">hongse</a>
+    <a :style="pink">blue</a>
+    <!-- 条件渲染 -->
+    <a v-if="ispartA">partA</a>
+    <!-- <a v-show="!ispartA">partB</a> -->
+    <a v-else>no data</a>
+    <button @click="toggle">toggle</button><br>
     <button @click="addItem">add</button>
 
     <!-- 渲染对象 -->
@@ -41,19 +50,24 @@
 
 <script>
 //引入当前文件
-// import componentA from './components/new'
+import componentA from './components/new'
 import Vue from 'vue'
 export default {
   //注册组件
-  // components:{
-  //   componentA:componentA
-  // },
+  components:{
+    componentA:componentA
+  },
   name: 'App',
   data(){
     return{
-      // msg:'<span>hi</span>',
+      link:'http://www.baidu.com',
+      msg:'<span>hi</span>',
+      dataa:23,
+      red:'red',
+      pink:{"color":'pink'},
+      ispartA:true,
       // num:1,
-      // status:true,
+      status:true,
       items:[
         {name:'apple1',price:10},
         {name:'apple2',price:20},
@@ -74,6 +88,10 @@ export default {
         name:'apple4',
         price:40
       })
+    },
+    //相当于toggle:function(){}
+    toggle(){
+      this.ispartA=!this.ispartA
     }
   }
 }
@@ -87,5 +105,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.red{
+  color: red
 }
 </style>
