@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import Work from './Work'
 import router from './router'
 
 Vue.config.productionTip = false
@@ -40,8 +41,8 @@ var myHeader = {
 var root = new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  components: { Work },
+  template: '<Work/>'
   // template: '<p>hello {{msg}}</p>',
   // data:{
   //   msg:'vue'

@@ -1,6 +1,7 @@
 <template>
   <div>
     {{ msg }}
+    <button @click="emitMyEvent">emit</button>
   </div>
 </template>
 
@@ -11,6 +12,12 @@ export default {
   data () {
     return {
       msg: 'this is component a'
+    }
+  },
+  methods:{
+    emitMyEvent(){
+      //emitMyEvent事件触发后自动触发my-event
+      this.$emit('my-event',this.msg)
     }
   }
 }
