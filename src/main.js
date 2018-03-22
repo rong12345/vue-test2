@@ -3,7 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import Work from './Work'
+import Deep from './Deep'
+import High from './High'
 import router from './router'
+
 
 Vue.config.productionTip = false
 
@@ -41,8 +44,8 @@ var myHeader = {
 var root = new Vue({
   el: '#app',
   router,
-  components: { Work },
-  template: '<Work/>'
+  components: { High },
+  template: '<High/>'
   // template: '<p>hello {{msg}}</p>',
   // data:{
   //   msg:'vue'
